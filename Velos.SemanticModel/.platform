@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Velos"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d6937b35-919b-43d3-9488-ea365a92f65a"
+  }
+}

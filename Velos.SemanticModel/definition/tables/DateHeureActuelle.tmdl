@@ -1,0 +1,24 @@
+table DateHeureActuelle
+	lineageTag: d4c433ca-4fad-47fc-9d22-efba5ca0cf63
+
+	column DateHeureActuelle
+		dataType: string
+		lineageTag: 23811318-20a3-48d2-babe-0d04faf943d8
+		summarizeBy: none
+		sourceColumn: DateHeureActuelle
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DateHeureActuelle = m
+		mode: import
+		source =
+				let
+				    Source = #table({"DateHeure"}, {{DateTime.LocalNow()}}),
+				    #"Colonnes renommées" = Table.RenameColumns(Source,{{"DateHeure", "DateHeureActuelle"}})
+				in
+				    #"Colonnes renommées"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

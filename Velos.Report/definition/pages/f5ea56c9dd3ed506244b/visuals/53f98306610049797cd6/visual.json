@@ -1,0 +1,43 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "53f98306610049797cd6",
+  "position": {
+    "x": 37.612488521579429,
+    "y": 66.997245179063356,
+    "z": 1000,
+    "height": 189.2378328741965,
+    "width": 987.32782369146,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "DateHeureActuelle"
+                        }
+                      },
+                      "Property": "DateHeureActuelle"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(DateHeureActuelle.DateHeureActuelle)",
+              "nativeQueryRef": "Premier DateHeureActuelle"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

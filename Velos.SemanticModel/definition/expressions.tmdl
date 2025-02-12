@@ -1,0 +1,35 @@
+expression station_information =
+		let
+		    Source = Json.Document(Web.Contents("https://gbfs.lyft.com/gbfs/2.3/bkn/fr/station_information.json")),
+		    data = Source[data],
+		    stations = data[stations],
+		    #"Converti en table" = Table.FromList(stations, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Column1 développé" = Table.ExpandRecordColumn(#"Converti en table", "Column1", {"lat", "region_id", "station_id", "name", "capacity", "rental_uris", "short_name", "lon"}, {"lat", "region_id", "station_id", "name", "capacity", "rental_uris", "short_name", "lon"}),
+		    #"Type modifié" = Table.TransformColumnTypes(#"Column1 développé",{{"station_id", type text}, {"lon", type number}, {"lat", type number}}),
+		    #"Autres colonnes supprimées" = Table.SelectColumns(#"Type modifié",{"lat", "station_id", "name", "lon"}),
+		    #"Colonnes permutées" = Table.ReorderColumns(#"Autres colonnes supprimées",{"station_id", "name", "lat", "lon"}),
+		    #"Type modifié1" = Table.TransformColumnTypes(#"Colonnes permutées",{{"name", type text}})
+		in
+		    #"Type modifié1"
+	lineageTag: faa2b046-f729-46ef-ac3a-ba86aab29ae0
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression station_status =
+		let
+		    Source = Json.Document(Web.Contents("https://gbfs.lyft.com/gbfs/2.3/bkn/fr/station_status.json")),
+		    data = Source[data],
+		    stations = data[stations],
+		    #"Converti en table" = Table.FromList(stations, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    #"Column1 développé" = Table.ExpandRecordColumn(#"Converti en table", "Column1", {"station_id", "num_ebikes_available"}, {"station_id", "num_ebikes_available"}),
+		    #"Type modifié" = Table.TransformColumnTypes(#"Column1 développé",{{"station_id", type text}, {"num_ebikes_available", Int64.Type}})
+		in
+		    #"Type modifié"
+	lineageTag: fbf75306-c449-4e37-9b5a-b8e10bab4589
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

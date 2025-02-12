@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "f84d43bb054016683c91",
+  "position": {
+    "x": 37.612488521579429,
+    "y": 291.49678604224056,
+    "z": 0,
+    "height": 398.45730027548205,
+    "width": 987.32782369146,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bikes"
+                    }
+                  },
+                  "Property": "station_id"
+                }
+              },
+              "queryRef": "Bikes.station_id",
+              "nativeQueryRef": "station_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bikes"
+                    }
+                  },
+                  "Property": "name"
+                }
+              },
+              "queryRef": "Bikes.name",
+              "nativeQueryRef": "name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bikes"
+                    }
+                  },
+                  "Property": "num_ebikes_available"
+                }
+              },
+              "queryRef": "Bikes.num_ebikes_available",
+              "nativeQueryRef": "num_ebikes_available"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

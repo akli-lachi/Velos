@@ -1,0 +1,148 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "acfebc772ec0298cc3d4",
+  "position": {
+    "x": 10.578512396694215,
+    "y": 0,
+    "z": 0,
+    "height": 720.514233241506,
+    "width": 1269.4214876033056,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "esriVisual",
+    "query": {
+      "queryState": {
+        "Latitude": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bikes"
+                    }
+                  },
+                  "Property": "lat"
+                }
+              },
+              "queryRef": "Bikes.lat",
+              "nativeQueryRef": "lat"
+            }
+          ]
+        },
+        "Longitude": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bikes"
+                    }
+                  },
+                  "Property": "lon"
+                }
+              },
+              "queryRef": "Bikes.lon",
+              "nativeQueryRef": "lon"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Bikes"
+                        }
+                      },
+                      "Property": "num_ebikes_available"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Bikes.num_ebikes_available)",
+              "nativeQueryRef": "Nombre de num_ebikes_available"
+            }
+          ]
+        },
+        "Time": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Bikes"
+                    }
+                  },
+                  "Property": "station_id"
+                }
+              },
+              "queryRef": "Bikes.station_id",
+              "nativeQueryRef": "station_id"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Bikes"
+                      }
+                    },
+                    "Property": "num_ebikes_available"
+                  }
+                },
+                "Function": 5
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "mapTools": [
+        {
+          "properties": {
+            "basemaps": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "mapObject": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "'{\"portalUrl\":\"https://www.arcgis.com\",\"version\":\"2.4\",\"isAuthorNamedUser\":false,\"map\":{\"webmap\":{\"is3d\":false,\"itemData\":{\"operationalLayers\":[{\"id\":\"MyLayer\",\"visibility\":true,\"opacity\":1,\"minScale\":0,\"maxScale\":0,\"refreshInterval\":0,\"title\":\"Coordonnées\",\"objectIdField\":\"objectId\",\"type\":\"DataLayer\",\"layerType\":\"ArcGISFeatureLayer\",\"popupEnabled\":true,\"disablePopup\":false,\"visible\":true,\"geometryType\":\"point\",\"source\":[{\"attributes\":{},\"geometry\":{\"x\":0,\"y\":0,\"type\":\"point\",\"spatialReference\":{\"latestWkid\":3857,\"wkid\":102100}}}],\"spatialReference\":{\"latestWkid\":3857,\"wkid\":102100},\"esriMaps\":{\"customProps\":null,\"isTimeEnabled\":\"true\",\"clusterInfo\":null,\"filteredRenderer\":null,\"lastShareInfo\":null},\"timeInfo\":{\"exportOptions\":{\"timeDataCumulative\":false,\"useTime\":true},\"endTimeField\":null,\"timeExtent\":[null,null],\"hasLiveData\":false,\"timeInterval\":null,\"timeIntervalUnits\":null,\"startTimeField\":\"Bikes_station_id\",\"timeReference\":null,\"trackIdField\":null},\"showLabels\":true,\"featureCollection\":{\"layers\":[{\"popupInfo\":{\"popupElements\":[{\"type\":\"fields\",\"fieldInfos\":[{\"fieldName\":\"Bikes_lat\",\"format\":{\"digitSeparator\":true,\"places\":2},\"isEditable\":true,\"label\":\"lat\",\"tooltip\":\"\",\"visible\":true},{\"fieldName\":\"Bikes_lon\",\"format\":{\"digitSeparator\":true,\"places\":2},\"isEditable\":true,\"label\":\"lon\",\"tooltip\":\"\",\"visible\":true},{\"fieldName\":\"CountNonNull_Bikes_num_ebikes_available_\",\"format\":{\"digitSeparator\":true,\"places\":0},\"isEditable\":true,\"label\":\"Nombre de num_ebikes_available\",\"tooltip\":\"\",\"visible\":true},{\"fieldName\":\"Bikes_station_id\",\"isEditable\":true,\"label\":\"station_id\",\"tooltip\":\"\",\"visible\":true},{\"fieldName\":\"ROW_ID\",\"format\":{\"digitSeparator\":true,\"places\":0},\"isEditable\":true,\"label\":\"ROW_ID\",\"tooltip\":\"\",\"visible\":true}]}],\"expressionInfos\":[],\"fieldInfos\":[{\"fieldName\":\"Bikes_lat\",\"format\":{\"digitSeparator\":true,\"places\":2},\"isEditable\":true,\"label\":\"lat\",\"tooltip\":\"\",\"visible\":true},{\"fieldName\":\"Bikes_lon\",\"format\":{\"digitSeparator\":true,\"places\":2},\"isEditable\":true,\"label\":\"lon\",\"tooltip\":\"\",\"visible\":true},{\"fieldName\":\"CountNonNull_Bikes_num_ebikes_available_\",\"format\":{\"digitSeparator\":true,\"places\":0},\"isEditable\":true,\"label\":\"Nombre de num_ebikes_available\",\"tooltip\":\"\",\"visible\":true},{\"fieldName\":\"Bikes_station_id\",\"isEditable\":true,\"label\":\"station_id\",\"tooltip\":\"\",\"visible\":true},{\"fieldName\":\"ROW_ID\",\"format\":{\"digitSeparator\":true,\"places\":0},\"isEditable\":true,\"label\":\"ROW_ID\",\"tooltip\":\"\",\"visible\":true}],\"title\":\"\",\"actions\":[]},\"layerDefinition\":{\"objectIdField\":\"objectId\",\"fields\":[{\"alias\":\"objectId\",\"editable\":false,\"name\":\"objectId\",\"nullable\":false,\"type\":\"esriFieldTypeOID\"},{\"alias\":\"lat\",\"editable\":true,\"name\":\"Bikes_lat\",\"nullable\":true,\"type\":\"esriFieldTypeDouble\"},{\"alias\":\"lon\",\"editable\":true,\"name\":\"Bikes_lon\",\"nullable\":true,\"type\":\"esriFieldTypeDouble\"},{\"alias\":\"Nombre de num_ebikes_available\",\"editable\":true,\"name\":\"CountNonNull_Bikes_num_ebikes_available_\",\"nullable\":true,\"type\":\"esriFieldTypeInteger\"},{\"alias\":\"station_id\",\"editable\":true,\"length\":-1,\"name\":\"Bikes_station_id\",\"nullable\":true,\"type\":\"esriFieldTypeString\"},{\"alias\":\"ROW_ID\",\"editable\":true,\"name\":\"ROW_ID\",\"nullable\":true,\"type\":\"esriFieldTypeInteger\"}],\"geometryType\":\"point\",\"drawingInfo\":{\"renderer\":{\"authoringInfo\":{\"classificationMethod\":\"esriClassifyNaturalBreaks\",\"type\":\"classedSize\"},\"type\":\"classBreaks\",\"visualVariables\":[],\"classBreakInfos\":[{\"classMaxValue\":2,\"symbol\":{\"type\":\"esriSMS\",\"color\":[250,168,63,255],\"angle\":0,\"xoffset\":0,\"yoffset\":0,\"size\":3,\"style\":\"esriSMSCircle\",\"outline\":{\"type\":\"esriSLS\",\"color\":[255,255,255,204],\"width\":1,\"style\":\"esriSLSSolid\"}}}],\"defaultLabel\":\"Autre\",\"defaultSymbol\":{\"type\":\"esriSMS\",\"color\":[128,128,128,255],\"angle\":0,\"xoffset\":0,\"yoffset\":0,\"size\":3,\"style\":\"esriSMSCircle\",\"outline\":{\"type\":\"esriSLS\",\"color\":[255,255,255,64],\"width\":0.75,\"style\":\"esriSLSSolid\"}},\"field\":\"CountNonNull_Bikes_num_ebikes_available_\",\"minValue\":0},\"transparency\":0},\"featureReduction\":null,\"minScale\":0,\"maxScale\":0,\"definitionExpression\":\"Bikes_station_id >= timestamp ''NaN-NaN-NaN NaN:NaN:NaN'' AND Bikes_station_id <= timestamp ''NaN-NaN-NaN NaN:NaN:NaN''\",\"elevationInfo\":null,\"name\":\"Coordonnées\",\"type\":\"DataLayer\",\"locationProvider\":{\"type\":\"coordinates\",\"lookupFields\":[{\"lookupField\":\"xFieldName\",\"outField\":\"Bikes_lon\"},{\"lookupField\":\"yFieldName\",\"outField\":\"Bikes_lat\"}],\"sourceSR\":4326,\"targetSR\":102100},\"queryParameters\":{\"tableId\":\"\"}},\"featureSet\":{\"features\":[{\"attributes\":{},\"geometry\":{\"x\":0,\"y\":0,\"type\":\"point\",\"spatialReference\":{\"latestWkid\":3857,\"wkid\":102100}}}]}}]}}],\"tables\":[],\"baseMap\":{\"baseMapLayers\":[{\"id\":\"VectorTile_1970\",\"opacity\":1,\"title\":\"Light Gray Base\",\"visibility\":true,\"layerType\":\"VectorTileLayer\",\"styleUrl\":\"https://cdn.arcgis.com/sharing/rest/content/items/291da5eab3a0412593b66d384379f89f/resources/styles/root.json\"}],\"title\":\"Light Gray Canvas\"},\"version\":\"2.26\",\"authoringApp\":\"ArcGIS for Power BI\",\"bookmarks\":[],\"initialState\":{\"viewpoint\":{\"targetGeometry\":{\"spatialReference\":{\"latestWkid\":3857,\"wkid\":102100},\"xmin\":-8282053.639889302,\"ymin\":4950535.550862912,\"xmax\":-8185819.421278227,\"ymax\":5003429.974436274}}}}},\"webmapExtensions\":{\"format\":2}},\"embedCheckPassed\":true}'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,61 @@
+table Bikes
+	lineageTag: f01576c2-8a57-474e-8053-cf6a6e75e8d8
+
+	column station_id
+		dataType: string
+		lineageTag: 4b24534b-4517-4bf9-85cc-58489b1c2b92
+		summarizeBy: none
+		sourceColumn: station_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: f1eee1a0-2c1f-4b3c-a9cb-ad46d707d3a9
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column lat
+		dataType: double
+		lineageTag: 233d5407-e34c-43d1-b01f-8a6ec82937d6
+		summarizeBy: none
+		sourceColumn: lat
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column lon
+		dataType: double
+		lineageTag: 6c2621e2-4978-44d5-b9d6-419a77648e42
+		summarizeBy: none
+		sourceColumn: lon
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column num_ebikes_available
+		dataType: int64
+		formatString: 0
+		lineageTag: 4a3d84c3-ab60-421c-a06d-ad84c04873a5
+		summarizeBy: none
+		sourceColumn: num_ebikes_available
+
+		annotation SummarizationSetBy = User
+
+	partition Bikes = m
+		mode: import
+		source =
+				let
+				    Source = Table.NestedJoin(station_information, {"station_id"}, station_status, {"station_id"}, "station_status", JoinKind.LeftOuter),
+				    #"station_status développé" = Table.ExpandTableColumn(Source, "station_status", {"num_ebikes_available"}, {"num_ebikes_available"})
+				in
+				    #"station_status développé"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

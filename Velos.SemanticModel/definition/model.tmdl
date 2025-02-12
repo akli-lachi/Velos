@@ -1,0 +1,22 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.139.2054.0 (24.12)+334ca1c95b576cc53924655643b0d36f21caac55
+
+annotation PBI_QueryOrder = ["station_information","station_status","Bikes","DateHeureActuelle"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Bikes
+ref table DateHeureActuelle
+
+ref cultureInfo fr-FR
+
