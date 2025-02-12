@@ -1,2 +1,10 @@
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+# Fichiers Power BI inutiles
+*.pbix
+*.pbir
+*.json  # Si certains fichiers JSON sont générés automatiquement
+
+# Fichiers de logs et caches
+*.log
+*.DS_Store  # Pour éviter les fichiers cachés sur Mac
